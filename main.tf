@@ -108,7 +108,8 @@ controller:
         unclassified:
           globalLibraries:
             libraries:
-              - name: "${var.shared_lib_name}"
+              %{for lib_name in local.shared_lib_names}
+              - name: "${lib_name}"
                 defaultVersion: "master"
                 allowVersionOverride: "true"
                 includeInChangesets: false
@@ -120,6 +121,7 @@ controller:
                         credentialsId: "${var.github_app_credential_id}"
                         traits:
                           - "gitBranchDiscovery"
+              %{endfor}
       script-approval: |-
         security:
           scriptApproval:
