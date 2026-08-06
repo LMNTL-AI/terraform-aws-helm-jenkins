@@ -163,6 +163,12 @@ variable "shared_lib_name" {
   default     = "spartan"
 }
 
+variable "shared_lib_names" {
+  description = "List of global shared-library names to register (all point at jenkins_shared_lib_repo). When non-empty, overrides shared_lib_name. Use to register multiple aliases (e.g. during a library rename) so both names resolve durably."
+  type        = list(string)
+  default     = []
+}
+
 variable "jenkins_cpu" {
   description = "The CPU request and limit for Jenkins"
   type        = string
