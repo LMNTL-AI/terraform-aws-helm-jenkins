@@ -46,7 +46,7 @@ controller:
       failureThreshold: 30
   jenkinsUrl: "https://${local.jenkins_fqdn}"
   jenkinsUrlProtocol: "https"
-  jenkinsAdminEmail: ${var.admin_alias} <admin@c0x12c.com>
+  jenkinsAdminEmail: ${var.admin_alias} <${var.admin_email}>
   installPlugins:
     %{for plugin in var.install_plugins}
     - ${plugin}

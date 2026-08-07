@@ -1,4 +1,4 @@
-> **ARCHIVED — read-only mirror.** This module is developed in [`c0x12c/terraform-modules`](https://github.com/c0x12c/terraform-modules) and published to `terraform.c0x12c.com`. This repository is a frozen mirror that only backs legacy `registry.terraform.io/c0x12c/<name>/<provider>` versions. Do not open issues or PRs here.
+> **LMNTL-AI live fork.** Forked from the former contractor's `c0x12c/terraform-modules` mirror (HK-2224/HK-2226 supply-chain re-home) and now maintained here. Consumed SHA-pinned by `LMNTL-AI/infra-terraform` (`live/shared/jenkins`). LMNTL changes so far: `shared_lib_names` list (#1, tag `v1.1.1-mcs`), parameterized `admin_email`. The archived-mirror notice that used to sit here no longer applies.
 
 # EKS-Helm/Jenkins
 
