@@ -184,7 +184,12 @@ variable "jenkins_memory" {
 variable "admin_alias" {
   description = "The alias of Jenkins admin"
   type        = string
-  default     = "Spartan"
+  default     = "LMNTL"
+}
+
+variable "admin_email" {
+  description = "The email address of the Jenkins admin (rendered into jenkinsAdminEmail / CasC adminAddress)"
+  type        = string
 }
 
 variable "enabled_datadog" {
