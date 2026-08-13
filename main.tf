@@ -110,8 +110,8 @@ controller:
             libraries:
               %{for lib_name in local.shared_lib_names}
               - name: "${lib_name}"
-                defaultVersion: "master"
-                allowVersionOverride: "true"
+                defaultVersion: "${var.shared_lib_default_version}"
+                allowVersionOverride: "${var.shared_lib_allow_version_override}"
                 includeInChangesets: false
                 retriever:
                   modernSCM:
@@ -121,6 +121,7 @@ controller:
                         credentialsId: "${var.github_app_credential_id}"
                         traits:
                           - "gitBranchDiscovery"
+                          - "gitTagDiscovery"
               %{endfor}
       script-approval: |-
         security:

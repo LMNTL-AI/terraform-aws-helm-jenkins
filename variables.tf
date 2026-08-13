@@ -341,3 +341,15 @@ variable "tolerations" {
   }))
   default = []
 }
+
+variable "shared_lib_default_version" {
+  description = "Default version (branch, tag) the controller loads for each global shared library when a Jenkinsfile does not request one. Pin to a tag (with tag discovery, below) to make the controller-trusted library a deliberate supply-chain gate instead of floating master."
+  type        = string
+  default     = "master"
+}
+
+variable "shared_lib_allow_version_override" {
+  description = "Whether a Jenkinsfile's @Library('name@version') may override the default version. Leave true while consumer Jenkinsfiles still declare @master; flip false once the fleet declares no version to fully enforce the pin."
+  type        = bool
+  default     = true
+}
