@@ -51,6 +51,12 @@ variable "jenkins_viewer" {
   default     = []
 }
 
+variable "jenkins_service_account_executors" {
+  description = "Local Jenkins user accounts (not GitHub teams) granted build-only executor permissions — for service accounts like lmntl-svc-jenkins-bot that authenticate with an API token and never log in via GitHub OAuth"
+  type        = list(string)
+  default     = []
+}
+
 variable "jenkins_shared_lib_repo" {
   description = "The Jenkins shared library repo"
   type        = string
