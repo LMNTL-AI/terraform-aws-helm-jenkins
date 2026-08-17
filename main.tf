@@ -242,6 +242,16 @@ controller:
                       - "Job/Read"
                       - "View/Read"
               %{endfor}
+              %{for user in var.jenkins_service_account_executors}
+                - user:
+                    name: "${user}"
+                    permissions:
+                      - "Overall/Read"
+                      - "Job/Read"
+                      - "Job/Discover"
+                      - "Job/Build"
+                      - "View/Read"
+              %{endfor}
           %{endif}
     %{if var.enabled_github_app_login}
     securityRealm: |-
